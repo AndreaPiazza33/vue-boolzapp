@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*container background*/
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(hsl(174.4deg 100% 29.41%)20%,hsl(68.57deg 8.86% 84.51%)20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*container app*/
+.wa-container{
+    background-color: hsl(0deg 0% 91.76%);
+    display: flex;
+    flex-direction: row;
+    height: 700px;
+    width: 1000px;
+}
+/*container lista chat*/
+.chat-list-container{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 100%;
+}
+/*header lista chat*/
+.chat-list-header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: hsl(0deg 0% 91.76%);
+    border: 2px dashed black;
+}
+.notifications-box{
+    background-color: hsl(198.55deg 94.83% 77.25%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+}
+.notifications-text{
+    width: 75%;
+    height: 100%;
+    border: 1px dashed black;
+}
+/*lista chat chiuse*/
+.chat-list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: hsl(0deg 0% 91.76%);
+    overflow-y: auto;
+    border: 2px dashed black;
+
+}
+.chat-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+}
+
+.chat-img{
+    width: 20%;
+    height: 100%;
+    border: 1px dashed grey;
+}
+
+.chat-text{
+    width: 55%;
+    height: 100%;
+    border: 1px dashed red;
+}
+
+.chat-hours{
+    width: 20%;
+    height: 100%;
+    border: 1px dashed grey;
+}
+
+/*chat principale*/
+.open-chat{
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/mine.jpg);
+    border: 2px dashed black;
+    height: 100%;
+    width: 65%;
+}
