@@ -34,7 +34,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     background-color: hsl(0deg 0% 91.76%);
-    border: 2px dashed black;
+    border: 1px dashed black;
 }
 .notifications-box{
     background-color: hsl(198.55deg 94.83% 77.25%);
@@ -55,7 +55,7 @@
     flex-wrap: nowrap;
     background-color: hsl(0deg 0% 91.76%);
     overflow-y: auto;
-    border: 2px dashed black;
+    border: 1px dashed black;
 
 }
 .chat-box{
@@ -87,8 +87,42 @@
 .open-chat{
     display: flex;
     flex-direction: column;
-    background-image: url(../img/mine.jpg);
-    border: 2px dashed black;
+    border: 1px dashed black;
     height: 100%;
     width: 65%;
+}
+
+.open-chat-message{
+    background-image: url(../img/mine.jpg);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100%;
+    border: 1px dashed black;    
+}
+/*messaggi inviati*/
+.sent-message-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+}
+.sent-message{
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    background-color: hsl(94.29deg 84% 85.29%);
+}
+/*messaggi ricevuti*/
+.received-message-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+}
+.received-message{
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    background-color: hsl(0deg 0% 100%);
 }
