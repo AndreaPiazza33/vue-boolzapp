@@ -23,7 +23,7 @@
 </head>
 <body>
     <!--contenitore-->
-    <div class="wrapper">
+    <div class="wrapper" id="app">
         <div class="wa-container">
             <!--lista chat chiuse(side)-->
             <div class="chat-list-container">
@@ -32,30 +32,38 @@
                     <!--profilo--> 
                     <div class="chat-box">
                         <div class="chat-img">
-                            img
+                            <img src="./img/avatar_io.jpg" alt="">
                         </div>
                         <div class="chat-text">
-                            <h4>nome</h3>
+                            <h4>Sofia</h3>
                         </div>
-                        <div class="chat-hours">
-                            3 icone
+                        <div class="chat-hours-header">
+                            <div>
+                                <i class="fa-solid fa-circle-notch" style="color: #b0b0b0;"></i>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-message" style="color: #b0b0b0;"></i>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-ellipsis-vertical" style="color: #b0b0b0;"></i>
+                            </div>
                         </div>
                     </div>
                     <!--blocco azzurro-->
                     <div class="notifications-box">
-                        <div class="chat-img">
-                            icona
+                        <div class="chat-img chat-img-notifications">
+                            <i class="fa-solid fa-bell-slash fa-xl" style="color: #8ddafb;"></i>
                         </div>
                         <div class="notifications-text">
-                            <h4>notifiche titolo</h3>
-                            <span>testo</span>
+                            <h6>Ricevi notifiche di nuovi messaggi</h6>
+                            <span>Attiva notifiche desktop</span>
                         </div>
                     </div>
                     <!--barra di ricerca-->
                     <nav class="navbar bg-light">
                         <form class="container-fluid">
                         <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1">search</span>
+                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass" style="color: #b0b0b0;"></i></span>
                             <input type="text" class="form-control" placeholder="cerca o inizia una nuova chat" aria-label="cerca o inizia una nuova chat" aria-describedby="basic-addon1">
                         </div>
                         </form>
@@ -64,107 +72,16 @@
 
             <!--lista chat chiuse-->            
                 <div class="chat-list">               
-                    <div class="chat-box">
+                    <div class="chat-box" v-for="contact in contacts">
                         <div class="chat-img">
-                            img
+                            <img v-bind:src="contact.avatar" alt="">
                         </div>
                         <div class="chat-text">
-                            <h4>nome</h3>
-                            <span>ultimo messaggio inviato</span>
+                            <h4>{{ contact.name }}</h4>
+                            <span>Ultimo messaggio inviato</span>
                         </div>
                         <div class="chat-hours">
-                            orario
-                        </div>
-                    </div>
-                    
-                    <div class="chat-box">
-                        <div class="chat-img">
-                            img
-                        </div>
-                        <div class="chat-text">
-                            <h4>nome</h3>
-                            <span>ultimo messaggio inviato</span>
-                        </div>
-                        <div class="chat-hours">
-                            orario
-                        </div>
-                    </div>
-                    
-                    <div class="chat-box">
-                        <div class="chat-img">
-                            img
-                        </div>
-                        <div class="chat-text">
-                            <h4>nome</h3>
-                            <span>ultimo messaggio inviato</span>
-                        </div>
-                        <div class="chat-hours">
-                            orario
-                        </div>
-                    </div>
-                    
-                    <div class="chat-box">
-                        <div class="chat-img">
-                            img
-                        </div>
-                        <div class="chat-text">
-                            <h4>nome</h3>
-                            <span>ultimo messaggio inviato</span>
-                        </div>
-                        <div class="chat-hours">
-                            orario
-                        </div>
-                    </div>
-                    
-                    <div class="chat-box">
-                        <div class="chat-img">
-                            img
-                        </div>
-                        <div class="chat-text">
-                            <h4>nome</h3>
-                            <span>ultimo messaggio inviato</span>
-                        </div>
-                        <div class="chat-hours">
-                            orario
-                        </div>
-                    </div>
-                    
-                    <div class="chat-box">
-                        <div class="chat-img">
-                            img
-                        </div>
-                        <div class="chat-text">
-                            <h4>nome</h3>
-                            <span>ultimo messaggio inviato</span>
-                        </div>
-                        <div class="chat-hours">
-                            orario
-                        </div>
-                    </div>
-                    
-                    <div class="chat-box">
-                        <div class="chat-img">
-                            img
-                        </div>
-                        <div class="chat-text">
-                            <h4>nome</h3>
-                            <span>ultimo messaggio inviato</span>
-                        </div>
-                        <div class="chat-hours">
-                            orario
-                        </div>
-                    </div>
-                    
-                    <div class="chat-box">
-                        <div class="chat-img">
-                            img
-                        </div>
-                        <div class="chat-text">
-                            <h4>nome</h3>
-                            <span>ultimo messaggio inviato</span>
-                        </div>
-                        <div class="chat-hours">
-                            orario
+                            <span>12:00</span>
                         </div>
                     </div>
                 </div>                
@@ -182,7 +99,9 @@
                         <p>ultimo accesso</p>
                     </div>
                     <div class="chat-hours">
-                        3 icone
+                        <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #b0b0b0;"></i>
+                        <i class="fa-solid fa-paperclip fa-xl" style="color: #b0b0b0;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical fa-xl" style="color: #b0b0b0;"></i>
                     </div>
                 </div>
 
@@ -205,7 +124,7 @@
                 <!--footer chat aperta-->
                 <div class="chat-box">
                     <div class="chat-img">
-                        icona
+                        <i class="fa-regular fa-face-smile fa-xl" style="color: #6c7275;"></i>
                     </div>
                     <div class="chat-text">
                         <div class="input-group mb-3">
@@ -213,7 +132,7 @@
                           </div>
                     </div>
                     <div class="chat-hours">
-                        icona
+                        <i class="fa-solid fa-microphone fa-xl" style="color: #6c7275;"></i>
                     </div>
                 </div>
             </div>

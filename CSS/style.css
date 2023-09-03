@@ -70,7 +70,16 @@
     height: 100%;
     border: 1px dashed grey;
 }
-
+.chat-img img{
+    width: 100%;
+    height: 100%;
+}
+.chat-img-notifications{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0deg 0% 91.76%);
+}
 .chat-text{
     width: 55%;
     height: 100%;
@@ -81,6 +90,15 @@
     width: 20%;
     height: 100%;
     border: 1px dashed grey;
+}
+.chat-hours-header{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    border: 1px dashed grey; 
 }
 
 /*chat principale*/
@@ -93,7 +111,7 @@
 }
 
 .open-chat-message{
-    background-image: url(../img/mine.jpg);
+    background-image: url('../img/mine.jpg');
     display: flex;
     flex-direction: column;
     overflow-y: auto;
