@@ -64,7 +64,6 @@
     justify-content: space-around;
     align-items: start;
 }
-
 .chat-img{
     width: 20%;
     height: 100%;
@@ -143,4 +142,7 @@
     margin-top: 0.5rem;
     margin-left: 1rem;
     background-color: hsl(0deg 0% 100%);
+}
+.selected-contact{
+    background-color: hsl(180, 61%, 41%);
 }

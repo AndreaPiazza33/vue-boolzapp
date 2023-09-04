@@ -162,14 +162,21 @@ const contacts =[
     ],
     }
     ]
+
+
 //VUE
 const { createApp } = Vue
-let index = 0
 
 createApp({
   data() {
     return {
       contacts,
-    }
+      activeIndex: 0,
+    };
+  },
+  methods: {
+    activeContact(index) {
+        this.activeIndex = index;
+    },
   }
 }).mount('#app')    

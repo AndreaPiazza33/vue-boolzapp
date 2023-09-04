@@ -32,7 +32,7 @@
                     <!--profilo--> 
                     <div class="chat-box">
                         <div class="chat-img">
-                            <img src="./img/avatar_io.jpg" alt="">
+                            <img src="./img/avatar_io.jpg" alt="foto profilo">
                         </div>
                         <div class="chat-text">
                             <h4>Sofia</h3>
@@ -72,7 +72,7 @@
 
             <!--lista chat chiuse-->            
                 <div class="chat-list">               
-                    <div class="chat-box" v-for="contact in contacts">
+                    <div class="chat-box" v-for="(contact,index) in contacts" v-on:click="activeContact(index)" >
                         <div class="chat-img">
                             <img v-bind:src="contact.avatar" alt="">
                         </div>
@@ -92,10 +92,10 @@
                 <!--header chat aperta-->
                 <div class="chat-box">
                     <div class="chat-img">
-                        img
+                        <img v-bind:src="contacts[activeIndex].avatar" alt="">
                     </div>
                     <div class="chat-text">
-                        <h4>nome</h3>
+                        <h4>{{ contacts[activeIndex].name }}</h4>
                         <p>ultimo accesso</p>
                     </div>
                     <div class="chat-hours">
@@ -109,14 +109,14 @@
                     <!--messaggi inviati-->
                     <div class="sent-message-box">
                         <div class="sent-message">
-                            <p>messaggio inviato</p>
+                            <p></p>
                         </div>
                     </div>
 
                     <!--messaggi ricevuti-->
                     <div class="received-message-box">
                         <div class="received-message">
-                            <p>messaggio ricevuto</p>
+                            <p>{{ contacts[activeIndex].messages[0].message }}</p>
                         </div>
                     </div>
                 </div>
