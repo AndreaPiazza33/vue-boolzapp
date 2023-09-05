@@ -180,13 +180,24 @@ createApp({
     };
   },
   methods: {
+//indice contatto attivo   
     activeContact(index) {
         this.activeIndex = index;      
     },
+//messaggio inviato da input
     sendWrittenMessage(){
         let copyWrittenMessage = { ...this.writtenMessage };
         this.contacts[this.activeIndex].messages.push(copyWrittenMessage);
         this.writtenMessage.message = '';
+//messaggio di risposta
+        setTimeout(() => {
+            let automaticAnswer = {
+                date:'',
+                message:'ok',
+                status:'received'
+            };
+            this.contacts[this.activeIndex].messages.push(automaticAnswer);
+        }, 1000);
     },
   },
 }).mount('#app')    
