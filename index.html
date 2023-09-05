@@ -71,8 +71,8 @@
                 </div>
 
             <!--lista chat chiuse-->            
-                <div class="chat-list">               
-                    <div class="chat-box" v-for="(contact,index) in contacts" v-on:click="activeContact(index)" >
+                <div class="chat-list-box">            
+                    <div class="chat-box" v-for="(contact,index) in contacts" v-on:click="activeContact(index)">
                         <div class="chat-img">
                             <img v-bind:src="contact.avatar" alt="">
                         </div>
@@ -96,7 +96,7 @@
                     </div>
                     <div class="chat-text">
                         <h4>{{ contacts[activeIndex].name }}</h4>
-                        <p>ultimo accesso</p>
+                        <p>Ultimo accesso oggi alle 12:00</p>
                     </div>
                     <div class="chat-hours">
                         <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #b0b0b0;"></i>
@@ -106,21 +106,13 @@
                 </div>
 
                 <div class="open-chat-message">
-                    <!--messaggi inviati-->
-                    <div class="sent-message-box">
-                        <div class="sent-message">
-                            <p></p>
+                    <!--messaggi chat attiva-->
+                    <div class="message-box">
+                        <div v-for="message in contacts[activeIndex].messages" v-bind:class="message.status">
+                            <p>{{ message.message }}</p>
                         </div>
                     </div>
-
-                    <!--messaggi ricevuti-->
-                    <div class="received-message-box">
-                        <div class="received-message">
-                            <p>{{ contacts[activeIndex].messages[0].message }}</p>
-                        </div>
-                    </div>
-                </div>
-
+                </div>    
                 <!--footer chat aperta-->
                 <div class="chat-box">
                     <div class="chat-img">

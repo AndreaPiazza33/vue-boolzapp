@@ -34,7 +34,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
     background-color: hsl(0deg 0% 91.76%);
-    border: 1px dashed black;
 }
 .notifications-box{
     background-color: hsl(198.55deg 94.83% 77.25%);
@@ -46,17 +45,23 @@
 .notifications-text{
     width: 75%;
     height: 100%;
-    border: 1px dashed black;
 }
 /*lista chat chiuse*/
 .chat-list{
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     background-color: hsl(0deg 0% 91.76%);
     overflow-y: auto;
-    border: 1px dashed black;
-
+}
+.chat-list-box{
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0deg 0% 100%);
+    overflow-y: auto;
+}
+.chat-list-box .chat-box:hover{
+    background-color: hsl(180deg 4.76% 91.76%);
+    cursor: pointer;
 }
 .chat-box{
     display: flex;
@@ -67,7 +72,6 @@
 .chat-img{
     width: 20%;
     height: 100%;
-    border: 1px dashed grey;
 }
 .chat-img img{
     width: 100%;
@@ -82,13 +86,11 @@
 .chat-text{
     width: 55%;
     height: 100%;
-    border: 1px dashed red;
 }
 
 .chat-hours{
     width: 20%;
     height: 100%;
-    border: 1px dashed grey;
 }
 .chat-hours-header{
     width: 20%;
@@ -97,14 +99,12 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
-    border: 1px dashed grey; 
 }
 
 /*chat principale*/
 .open-chat{
     display: flex;
     flex-direction: column;
-    border: 1px dashed black;
     height: 100%;
     width: 65%;
 }
@@ -113,36 +113,30 @@
     background-image: url('../img/mine.jpg');
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     overflow-y: auto;
-    height: 100%;
-    border: 1px dashed black;    
+    height: 100%;  
 }
-/*messaggi inviati*/
-.sent-message-box{
+/*messaggi chat attiva */
+.message-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.sent{
     display: flex;
     flex-direction: row;
     justify-content: end;
-    width: 100%;
-}
-.sent-message{
-    text-align: center;
+    width: 100%;    
     margin-top: 0.5rem;
     margin-right: 1rem;
-    background-color: hsl(94.29deg 84% 85.29%);
+    background-color: hsl(94.29deg 84% 85.29%);    
 }
-/*messaggi ricevuti*/
-.received-message-box{
+.received{
     display: flex;
     flex-direction: row;
     justify-content: start;
-    width: 100%;
-}
-.received-message{
-    text-align: center;
     margin-top: 0.5rem;
     margin-left: 1rem;
     background-color: hsl(0deg 0% 100%);
-}
-.selected-contact{
-    background-color: hsl(180, 61%, 41%);
 }
