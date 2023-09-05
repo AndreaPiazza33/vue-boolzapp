@@ -172,11 +172,21 @@ createApp({
     return {
       contacts,
       activeIndex: 0,
+      writtenMessage: {
+        date:'',
+        message:'',
+        status:'sent',
+      }
     };
   },
   methods: {
     activeContact(index) {
         this.activeIndex = index;      
     },
-  }
+    sendWrittenMessage(){
+        let copyWrittenMessage = { ...this.writtenMessage };
+        this.contacts[this.activeIndex].messages.push(copyWrittenMessage);
+        this.writtenMessage.message = '';
+    },
+  },
 }).mount('#app')    
